@@ -1,0 +1,26 @@
+version: 0.0
+Resources: 
+  - TargetService:
+      Type: AWS::ECS:Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-2:106228824484:task-definition/DemoAppTaskDefinition:1"
+        LoadBalancerInfo:
+          ContainerName: "DemoAppContainer"
+          ContainerPort: 8000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

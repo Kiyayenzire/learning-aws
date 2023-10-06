@@ -1,0 +1,65 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html>
+    <head>
+        <title>Profile Management | THEch 0</title>
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    </head>
+
+
+    {% include 'apple/base.html'%}
+
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+        <a class="navbar-brand main-heading" href="{% url ''%}">                 
+          &nbsp; THEch        
+        </a>
+    </nav> -->
+
+
+    <br>
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h3>Update User username & email</h3>
+        <br>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{user_form.username|as_crispy_field}}
+            <br>
+            {{user_form.email|as_crispy_field}}
+            <br>
+        <input class="btn btn-primary" type="submit" value="Update"/>
+        <br>
+        </form>
+    </div>
+    <br> <br>
+
+
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h3>Upload your profile picture</h3>
+        <br>
+        <form method="POST" autocomplete="off", enctype="multipart/form-data">
+            {% csrf_token %}
+            {{profile_form.profile_pic|as_crispy_field}}
+            <br><br>
+            <input class="btn btn-primary" type="submit" value="Update"/>
+        </form>
+    </div>
+    <br><br>
+
+
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h3>Account Deletion</h3>
+        <a href="{% url 'delete-account' %}">Delete my Account</a>
+    </div>
+    <br>
+    
+
+
+    <script src="{% static 'js/app.js' %}"></script>
+
+
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+
+<html>
+
+    <head>
+        <title>Delete Account | THEch 0</title>
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    </head>
+
+
+    {% include 'apple/base.html'%}
+
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+        <a class="navbar-brand main-heading" href="{% url ''%}">                 
+          &nbsp; THEch        
+        </a>
+    </nav> -->
+
+    
+
+    <br>
+    <div class="container bg-white shadow-md p-5 form-layout">
+    <h1>Delete Account</h1>
+    <form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <br>
+    <p>Are you sure you want to delete your account</p>
+    <br><br>
+    <a href="{% url 'profile-management' %}">Go back</a>
+    <br><br>
+    <input class="btn btn-danger" type="submit" value="Confirm Account Deletion"/>   
+    <br> <br>
+    </form>
+    </div>
+
+
+
+    <script src="{% static 'js/app.js' %}"></script>
+
+</html>
+
+
